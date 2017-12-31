@@ -8,22 +8,23 @@ $(document).ready(function (){
 
   // Grabbing the text in the input field and storing in bookName Variable
             
-  var queryURL = "https://gather.jiveon.com/api/core/v3/people/username/ttejuosho?fields=emails,name";
+  var queryURL = "https://community.jivesoftware.com/api/core/v3/people/@me";
 
   $.ajax({
     url: queryURL,
     beforeSend: function(xhr) { 
-      xhr.setRequestHeader("Authorization", "Basic " + btoa("ttejuosho:Fareedah1")); 
+      xhr.setRequestHeader("Authorization ", "Basic " + btoa("theycallmeflowz " + ": " + "kpmgwgci1A")); 
     },
     type: 'GET',
     dataType: 'json',
     contentType: 'application/json',
     processData: false,
-    success: function (data) {
-      console.log(JSON.stringify(data));
+    data: '{"foo":"bar"}',
+    success: function (response) {
+      console.log(response);
     },
-    error: function(){
-      alert("Cannot get data");
+    error: function(error){
+      console.log(error)
     }
 });
 
